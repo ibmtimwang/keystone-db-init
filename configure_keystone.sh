@@ -13,7 +13,7 @@ cat /var/$USER
 
 
 echo -n Database 
-mysql -h $MYSQL_HOST  -P$MYSQL_PORT -ukeystone --password=$MYSQL_PASSWORD < keystone-configure.sql
+mysql -h $MYSQL_HOST  -P$MYSQL_PORT --user=keystone --password=$MYSQL_PASSWORD < keystone-configure.sql
 echo " [COMPLETE]"
  
 echo -n "configuration "
