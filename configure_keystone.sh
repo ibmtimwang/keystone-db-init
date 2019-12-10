@@ -9,7 +9,7 @@ if [ -z "$MYSQL_PASSWORD" ]
 then MYSQL_PASSWORD=$( cat /etc/keystone/dbpass.txt )
 fi
 
-cat /var/$USER
+cat /var/`whoami`
 
 
 echo -n Database 
