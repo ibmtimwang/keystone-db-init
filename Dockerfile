@@ -7,8 +7,10 @@ RUN yum install -y centos-release-openstack-stein &&\
     yum -y clean all
 
 
-RUN chmod 777 /etc/keystone/keystone.conf
-RUN chmod a+w /var/log/keystone/keystone.log
+RUN chmod o+rw /etc/keystone/keystone.conf
+RUN chmod o+w /var/log/keystone/keystone.log
+
 COPY ./keystone-configure.sql /
 COPY ./configure_keystone.sh /
-CMD /configure_keystone.sh keystone-mariadb 3306
+USER keystone
+CMD /configure_keystone.sh
