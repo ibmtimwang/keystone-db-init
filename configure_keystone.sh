@@ -1,7 +1,10 @@
 #!/bin/bash
 
-MYSQL_HOST=keystone-mariadb
+#MYSQL_HOST=keystone-mariadb
 MYSQL_PORT=3306
+
+MYSQL_PASSWORD=keystone 
+MYSQL_HOST=10.131.0.139
 
 if [ -z "$MYSQL_PASSWORD" ]
 then MYSQL_PASSWORD=$( cat /etc/keystone/dbpass.txt )
